@@ -12,7 +12,7 @@ services:
     build:
       context: ./
       dockerfile: docker/Dockerfile
-    restart: always
+    restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - provider:/root/.local/share/ya-provider/
