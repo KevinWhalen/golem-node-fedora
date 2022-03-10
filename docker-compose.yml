@@ -9,6 +9,9 @@ services:
     # Using a specific name allows there to be one instance per compose project.
     container_name: ${COMPOSE_PROJECT_NAME}
     image: whalen/golem-node-fedora
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
