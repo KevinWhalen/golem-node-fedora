@@ -6,7 +6,8 @@ volumes:
 
 services:
   node:
-    container_name: ${COMPOSE_PROJECT_NAME}_node
+    # Using a specific name allows there to be one instance per compose project.
+    container_name: ${COMPOSE_PROJECT_NAME}
     image: aabrioux/golem-node:latest
     restart: always
     volumes:
