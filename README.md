@@ -1,3 +1,9 @@
+## :information_source: Fork Notes
+
+Very, very minor tweaks to run in Fedora GNU/Linux instead of Ubuntu GNU/Linux because I like my familar base.
+
+**WARNING:** Fedora is not officially supported by the Golem Network.
+
 #  Golem Provider Node :whale: Docker Image
 
 > Project won one of the four prizes allocated by the Golem Project on Gitcoin's [Hack New Golem](https://gitcoin.co/issue/golemfactory/hackathons/6/100024411) bounty!
