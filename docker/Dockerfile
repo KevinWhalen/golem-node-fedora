@@ -13,11 +13,13 @@ ARG YA_WASI_VERSION
 ARG YA_VM_VERSION
 ARG YA_DIR_BIN_TMP
 ARG YA_DIR_PLUGINS
-RUN dnf install -y \
+RUN \
+dnf install -y \
     wget \
     ca-certificates \
-    xz \
-&& mkdir -p ${YA_DIR_BIN_TMP} \
+    findutils
+RUN \
+mkdir -p ${YA_DIR_BIN_TMP} \
 && mkdir -p ${YA_DIR_PLUGINS} \
 && wget -q "https://github.com/golemfactory/yagna/releases/download/v${YA_CORE_VERSION}/golem-provider-linux-v${YA_CORE_VERSION}.tar.gz" \
 && wget -q "https://github.com/golemfactory/ya-runtime-wasi/releases/download/v${YA_WASI_VERSION}/ya-runtime-wasi-linux-v${YA_WASI_VERSION}.tar.gz" \
