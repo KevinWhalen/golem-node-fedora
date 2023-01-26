@@ -12,6 +12,8 @@ services:
     build:
       context: ./
       dockerfile: docker/Dockerfile
+      args:
+        FEDORA_BASE: registry.fedoraproject.org/fedora
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
