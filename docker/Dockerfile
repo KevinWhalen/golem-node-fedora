@@ -47,7 +47,9 @@ COPY --from=installer ${YA_DIR_BIN_TMP} ${YA_DIR_BIN}
 
 CMD ["golemsp", "run"]
 VOLUME ["/root/.local/share/ya-provider/", "/root/.local/share/yagna/"]
-HEALTHCHECK \
-    --interval=1m \
-    --timeout=10s \
-    CMD golemsp status || exit 1
+
+# FIXME: is not being restarted after failed healthchecks.
+#HEALTHCHECK \
+#    --interval=1m \
+#    --timeout=10s \
+#    CMD golemsp status || exit 1
