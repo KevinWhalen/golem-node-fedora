@@ -24,17 +24,17 @@ services:
     environment:
       - YA_PAYMENT_NETWORK=${YA_PAYMENT_NETWORK}
       - YA_ACCOUNT=${YA_ACCOUNT}
-    labels:
-      ofelia.enabled: "true"
-      # Use different hour for different services. Example: 3 AM.
-      ofelia.job-exec.golem-clean.schedule: "0 0 3 * * 0" # Once per week on Sunday.
-      ofelia.job-exec.golem-clean.command: "find /root/.local/share/ya-provider/exe-unit/cache/ -mtime +7 -type f -exec rm {} +"
+    #labels:
+    #  ofelia.enabled: "true"
+    #  # Use different hour for different services. Example: 3 AM.
+    #  ofelia.job-exec.golem-clean.schedule: "0 0 3 * * 0" # Once per week on Sunday.
+    #  ofelia.job-exec.golem-clean.command: "find /root/.local/share/ya-provider/exe-unit/cache/ -mtime +7 -type f -exec rm {} +"
 
-  scheduler:
-    image: mcuadros/ofelia
-    command: daemon --docker
-    depends_on:
-      - node
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+  #scheduler:
+  #  image: mcuadros/ofelia
+  #  command: daemon --docker
+  #  depends_on:
+  #    - node
+  #  volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock:ro
 
